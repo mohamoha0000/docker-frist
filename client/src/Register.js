@@ -2,14 +2,14 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Auth.css'; // Import the new CSS file
-
+const url=process.env.url_backend;
 function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const register = async () => {
     try {
-      await axios.post('http://localhost:5000/api/register', { email, password });
+      await axios.post(`${url}/api/register`, { email, password });
       alert('تم التسجيل بنجاح!');
     } catch (err) {
       alert('حدث خطأ');

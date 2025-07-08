@@ -2,14 +2,14 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Auth.css'; // Import the new CSS file
-
+const url=process.env.url_backend;
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const login = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/login', { email, password });
+      const res = await axios.post(`${url}/api/login`, { email, password });
       alert(res.data.message);
     } catch (err) {
       alert('فشل في تسجيل الدخول');
