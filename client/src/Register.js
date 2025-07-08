@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Auth.css'; // Import the new CSS file
-const url=process.env.url_backend;
+const url=process.env.REACT_APP_url_backend;
 function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
